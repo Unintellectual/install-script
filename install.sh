@@ -128,13 +128,7 @@ else
   echo "GitHub CLI authentication failed."
 fi
 
-# Install Oh My Zsh
-echo "Installing Oh My Zsh..."
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || echo "Failed to install Oh My Zsh."
-else
-  echo "Oh My Zsh is already installed."
-fi
+
 
 # Replace .bashrc and .zshrc with dotfiles versions
 DOTFILES_DIR="$HOME/Projects/dotfiles"
@@ -171,5 +165,13 @@ if [ ${#MISSING_PACKAGES[@]} -ne 0 ]; then
   echo "The following packages could not be installed automatically:"
   printf '%s\n' "${MISSING_PACKAGES[@]}"
 fi
+sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh
 
+# Install Oh My Zsh
+echo "Installing Oh My Zsh..."
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || echo "Failed to install Oh My Zsh."
+else
+  echo "Oh My Zsh is already installed."
+fi
 echo "All programs installation process completed."
