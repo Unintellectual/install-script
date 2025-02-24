@@ -1,3 +1,3 @@
 # install-script
 
-bash <(curl -fsSL https://raw.githubusercontent.com/Unintellectual/dotfiles/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Unintellectual/install-script/main/install.sh)
